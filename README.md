@@ -54,15 +54,16 @@ FASTQ → BWA → SAM/BAM → Samtools → bcftools → VCF → Filtering
 
 ## 📂 Project Structure
 
+```
 NGS-Variant-Calling/
 ├── data/
 ├── real_data/
 ├── results/
 ├── scripts/
-│ └── pipeline.sh
+│   └── pipeline.sh
 ├── README.md
 └── .gitignore
-
+```
 ---
 
 ## ▶️ How to Run
