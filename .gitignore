@@ -1,0 +1,15 @@
+# Large sequencing files
+*.fastq
+*.fq
+*.bam
+*.sam
+
+# Index files
+*.bai
+*.fai
+
+# Results
+results/
+
+# OS files
+.DS_Store
