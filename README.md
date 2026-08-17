@@ -1,7 +1,3 @@
-![GitHub repo size](https://img.shields.io/github/repo-size/Yogaprakash-venkadachalam/NGS-Variant-Calling)
-![GitHub last commit](https://img.shields.io/github/last-commit/Yogaprakash-venkadachalam/NGS-Variant-Calling)
-![GitHub language](https://img.shields.io/github/languages/top/Yogaprakash-venkadachalam/NGS-Variant-Calling)
-
 # 🧬 NGS Variant Calling Pipeline
 
 This project demonstrates a complete **Next-Generation Sequencing (NGS) variant calling workflow** using real *E. coli* sequencing data.
@@ -23,23 +19,23 @@ FASTQ → BWA → SAM/BAM → Samtools → bcftools → VCF → Filtering
 ## ⚙️ Workflow Steps
 
 1. **Reference Indexing**
-   - Tool: BWA, Samtools  
+   - Tool: BWA, Samtools
    - Prepares the reference genome for alignment  
 
 2. **Read Alignment**
-   - Tool: BWA-MEM  
+   - Tool: BWA-MEM
    - Aligns paired-end reads to the reference genome  
 
 3. **BAM Processing**
-   - Tool: Samtools  
+   - Tool: Samtools
    - Converts SAM to BAM, sorts, and indexes  
 
 4. **Variant Calling**
-   - Tool: bcftools  
+   - Tool: bcftools
    - Detects SNPs and INDELs  
 
 5. **Variant Filtering**
-   - Tool: bcftools  
+   - Tool: bcftools
    - Filters variants based on quality metrics  
 
 ---
@@ -54,7 +50,7 @@ FASTQ → BWA → SAM/BAM → Samtools → bcftools → VCF → Filtering
 
 ## 📂 Project Structure
 
-```
+```text
 NGS-Variant-Calling/
 ├── data/
 ├── real_data/
@@ -64,6 +60,7 @@ NGS-Variant-Calling/
 ├── README.md
 └── .gitignore
 ```
+
 ---
 
 ## ▶️ How to Run
@@ -71,12 +68,13 @@ NGS-Variant-Calling/
 ```bash
 chmod +x scripts/pipeline.sh
 ./scripts/pipeline.sh
-
+```
 
 ---
 
 ## ▶️ Example Commands
 
+```bash
 # Index reference genome
 bwa index ecoli_ref.fa
 
@@ -95,7 +93,7 @@ bcftools call -mv --ploidy 1 -Ov -o variants.vcf
 
 # Filter variants
 bcftools filter -i 'DP>10 && QUAL>20' variants.vcf > filtered_variants.vcf
-
+```
 
 ---
 
@@ -116,8 +114,9 @@ bcftools filter -i 'DP>10 && QUAL>20' variants.vcf > filtered_variants.vcf
 
 ## 📄 Example Output
 
+```text
 NC_000913.3 4296380 . AC ACGC 228.387 PASS DP=246 ...
-
+```
 
 ---
 
@@ -131,7 +130,7 @@ NC_000913.3 4296380 . AC ACGC 228.387 PASS DP=246 ...
 
 ## ⚠️ Notes
 
-- Large sequencing files are excluded using .gitignore  
+- Large sequencing files are excluded using `.gitignore`  
 - Recommended system: ≥16GB RAM  
 - Required tools: bwa, samtools, bcftools  
 
